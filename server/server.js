@@ -16,4 +16,3 @@ app.use("/warehouse", warehouseRoute);
 app.listen(serverPort, () => {
   console.log(`Listening on ${serverPort}`);
 });
-
