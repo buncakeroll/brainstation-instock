@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
 
 export default class Header extends Component {
-
-    render() {
-        return (
-            <div> 
-                <p>test</p>
-
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <p>test</p>
+      </div>
+    );
+  }
 }
