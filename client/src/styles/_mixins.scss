@@ -7,6 +7,7 @@
     }
 }
 
+//Regular breakpoint tablet
 @mixin tablet {
     @media (min-width: 768px) {
         @content;
@@ -19,6 +20,7 @@
     }
 }
 
+//Regular breakpoint desktop
 @mixin desktop {
     @media (min-width: 1200px) {
         @content;
