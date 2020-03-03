@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import DisplayPage from './components/DisplayPage/DisplayPage';
 
 function App() {
 
@@ -35,7 +36,8 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/locations' component={}/>
+        <Route path='/inventory' render={(props) => <DisplayPage heading='Inventory' {...props} /> } />
+        <Route path='/locations' render={(props) => <DisplayPage heading='Locations' {...props} /> } />
       </Switch>
     </BrowserRouter>
   );
