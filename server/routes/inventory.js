@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {jsonReader, jsonWriter} = require('./jsonFunctions');
-
+const inventoryFile = require('../data/inventory.json');
 
 
 module.exports = router;
