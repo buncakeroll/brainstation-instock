@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import warehouses from "./pages/Warehouses";
+import warehouses from "./pages/warehouses";
 import inventory from "./pages/inventory";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 
 class App extends Component {
   render() {
