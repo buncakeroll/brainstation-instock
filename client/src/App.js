@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import warehouses from "./pages/warehouses";
 import inventory from "./pages/inventory";
+import Header from "./components/Header";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
+        <Header />
         <Switch>
           <Route exact path="/" component={warehouses} />
           <Route path="/warehouses" component={warehouses} />
@@ -17,6 +19,5 @@ class App extends Component {
       </BrowserRouter>
     );
   }
-}
 
 export default App;
