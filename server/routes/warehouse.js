@@ -8,7 +8,7 @@ router.get('/warehouse/:id', (req, res) => {
         return req.params.id === item.id;
     });
 
-    const inventoryData = inventoryList.find(item => {
+    const inventoryData = inventoryList.filter(item => {
         return req.params.id == item.warehouseId
     });
 
