@@ -1,0 +1,28 @@
+@import './colors';
+@import './fonts';
+
+@mixin large-mobile {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+//Regular breakpoint tablet
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mini-laptop {
+    @media (min-width: 950px) {
+        @content;
+    }
+}
+
+//Regular breakpoint desktop
+@mixin desktop {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
