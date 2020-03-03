@@ -4,6 +4,7 @@ const warehouseList = require('../data/locations.json');
 
 
 router.post('/', (req, res) => {
+    //Unclear of required axios.post body
     let keys = Object.keys(req.body);
     if (keys.includes('id') && keys.includes('name') && keys.includes('address') && keys.includes('contact') && keys.includes('inventoryCategories')) {
         warehouseList.push(req.body);
