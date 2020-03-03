@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import warehouses from "./pages/warehouses";
+import warehouses from "./pages/Warehouses";
 import inventory from "./pages/inventory";
 import Header from "./components/Header";
 
@@ -19,5 +19,6 @@ class App extends Component {
       </BrowserRouter>
     );
   }
+}
 
 export default App;
