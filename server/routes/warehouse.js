@@ -1,6 +1,30 @@
 const express = require("express");
 const router = express.Router();
-const warehouseList = require("../data/locations.json");
+
+const warehouseList = require('../data/locations.json');
+const inventoryList = require('../data/inventory.json');
+
+router.get('/warehouse/:id', (req, res) => {
+    const warehouseData = warehouseList.find(item => {
+        return req.params.id === item.id;
+    });
+
+    const inventoryData = inventoryList.filter(item => {
+        return req.params.id == item.warehouseId
+    });
+
+    if (warehouseData == undefined) {
+        res.status(404).send('Warehouse not found');
+    }
+
+    else {
+        const data = [];
+        data.push(warehouseData);
+        data.push(inventoryData);
+
+        res.json(data);
+    }
+})
 
 router.get("/", (_, res) => {
   res.json(warehouseList);
