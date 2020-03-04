@@ -4,7 +4,7 @@ const router = express.Router();
 const warehouseList = require('../data/locations.json');
 const inventoryList = require('../data/inventory.json');
 
-router.get('/warehouses/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   const warehouseData = warehouseList.find(item => {
     return req.params.id === item.id;
   });
