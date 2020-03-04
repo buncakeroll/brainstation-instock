@@ -1,0 +1,22 @@
+@import './../styles/colors.scss';
+@import './../styles/fonts.scss';
+@import './../styles/mixins.scss';
+
+.details{
+
+    padding: 0 16px;
+    &__namearrow{
+        display: flex;
+    }
+
+    &__name{
+        font-family: 'Avenir-Bold';
+        font-size: 22px;
+        color: $primary;
+        margin-left: 15px;
+    }
+
+    &__link{
+        text-decoration: none;
+    }
+}
