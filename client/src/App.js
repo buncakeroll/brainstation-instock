@@ -12,7 +12,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         <NavBar />
-        <Header />
         <Switch>
           <Route exact path="/warehouses/:id" component={warehouseDetails} />
           <Route exact path="/inventory/:id" component={inventory} />
