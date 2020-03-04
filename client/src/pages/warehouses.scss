@@ -1,0 +1,22 @@
+@import './../styles/colors.scss';
+@import './../styles/fonts.scss';
+@import './../styles/mixins.scss';
+
+.locations{
+
+    &__labelscontainer{
+        display: none;
+        width: 100%;
+        padding: 20px 250px 0 96px;
+
+        @include desktop{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__label{
+        color: $accent;
+        font-weight: bold;
+    }
+}
