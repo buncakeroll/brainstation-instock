@@ -1,17 +1,6 @@
-import React, { Component } from "react";
-import CreateProduct from '../components/AddComponent/CreateProduct';
-import InventoryTable from "../components/InventoryTable/InventoryTable";
-import DisplayPage from '../components/DisplayPage/DisplayPage';
+import React from "react";
 
-export default class Inventory extends Component {
-    render() {
-      return (
-        <div>
-          <DisplayPage heading='Inventory'/>
-          <CreateProduct />
-          <InventoryTable />
-        </div>
-      )
-    }
+export default function Inventory() {
+    return <div></div>;
   }
   
