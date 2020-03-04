@@ -41,8 +41,8 @@
         width: 50vw;
         text-align: center;
         text-decoration: none;
-        color: inherit;
-        line-height: 1.9rem;
+        color: $white;
+        line-height: 2.85rem;
         transition: ease all .5s;
 
         @include tablet {

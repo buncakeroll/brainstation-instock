@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import warehouses from "./pages/warehouses";
+import warehouseDetails from "./pages/warehouseDetails";
 import inventory from "./pages/inventory";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar.jsx";
@@ -11,13 +12,12 @@ class App extends Component {
     return (
       <BrowserRouter>
         <NavBar />
-        <Header />
         <Switch>
-          <Route exact path="/" component={warehouses} />
+          <Route exact path="/warehouses/:id" component={warehouseDetails} />
+          <Route exact path="/inventory/:id" component={inventory} />
           <Route path="/warehouses" component={warehouses} />
           <Route path="/inventory" component={inventory} />
-          <Route exact path="/warehouses/:id" component={warehouses} />
-          <Route exact path="/inventory/:id" component={inventory} />
+          <Route exact path="/" component={warehouses} />
         </Switch>
       </BrowserRouter>
     );
