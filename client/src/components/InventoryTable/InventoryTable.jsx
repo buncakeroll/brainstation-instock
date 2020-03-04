@@ -20,7 +20,13 @@ class InventoryTable extends Component {
     render() {
         return (
             <section className='table'>
-                <div className='table__heading-bar'></div>
+                <div className='table__heading-bar'>
+                    <div className='table__box-start'>ITEM</div>
+                    <div className='table__box-reg'>LAST ORDERED</div>
+                    <div className='table__box-reg'>LOCATION</div>
+                    <div className='table__box-reg'>QUANTITY</div>
+                    <div className='table__box-reg--marg'>STATUS</div>
+                </div>
                 {
                     this.state.list.map(item => {
                         return <InventoryItem item={item} key={item.id}/>
