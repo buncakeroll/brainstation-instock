@@ -9,11 +9,14 @@
 
     @include tablet{
         padding: 16px 24px 0 24px;
+        max-width: 950px;
     }
 
     @include desktop{
         display: flex;
         justify-content: space-between;
+        position:relative;
+        max-width: none;
         padding: 0;
         padding-bottom: 24px;
         margin: 24px 96px 0 96px;
@@ -103,14 +106,26 @@
     &__threecs{
         @include tablet{
             display: flex;
+            justify-content: space-between;
             padding-right: 30px;
             border-bottom: solid 1.5px $inputBorder;
         }
 
         @include desktop{
             width: 780px;
+            justify-content: flex-start;
             border:none;
             align-items: center;
+        }
+    }
+
+    &__arrow2{
+        display: none;
+        @include desktop{
+            display: initial;
+            position: absolute;
+            right:15px;
+            top: 12px;
         }
     }
 }

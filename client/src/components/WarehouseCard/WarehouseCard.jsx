@@ -51,6 +51,7 @@ class WarehouseCard extends Component {
                                 </div>
                                 <p className='card__categories'>{item.inventoryCategories}</p>
                             </div>
+                            <img className='card__arrow2' src={arrowRight} />
                         </div>
                     )
                 })}
