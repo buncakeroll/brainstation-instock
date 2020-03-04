@@ -8,7 +8,7 @@ export default class NavBar extends Component {
             <div className='navbar'>
                 <div className='navbar--logo'>
                     <NavLink to='/'>
-                        <img src={ Logo } alt='Instock Logo'/>
+                        <img src={Logo} alt='Instock Logo' />
                     </NavLink>
                 </div>
                 <div className='navbar--links'>
