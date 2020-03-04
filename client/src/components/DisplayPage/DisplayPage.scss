@@ -34,6 +34,10 @@
             justify-content: space-between;
             align-items: center;
         }
+
+        @include tablet{
+            margin-bottom: 16px;
+        }
     }
 }
 
@@ -55,6 +59,7 @@ input[type=text][name='search'] {
         text-indent: 18%;
         padding-top: 2px;
     }
+
     @include desktop {
         width: 252px;
     }

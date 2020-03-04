@@ -9,10 +9,12 @@ export default function Warehouses() {
       heading='Locations'
     />
     <div className='locations__labelscontainer'>
-      <p className='locations__label'>WAREHOUSE</p>
-      <p className='locations__label'>CONTACT</p>
-      <p className='locations__label'>CONTACT INFORMATION</p>
-      <p className='locations__label'>CATEGORIES</p>
+      <p className='locations__label locations__label1'>WAREHOUSE</p>
+      <div className='locations__container'>
+        <p className='locations__label locations__label2'>CONTACT</p>
+        <p className='locations__label locations__label3'>CONTACT INFORMATION</p>
+        <p className='locations__label locations__label4'>CATEGORIES</p>
+      </div>
     </div>
     <WarehouseCard />
   </div>;

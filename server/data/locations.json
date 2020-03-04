@@ -4,7 +4,7 @@
     "name": "Punder Mifflin",
     "address": {
       "street": "123 Fake Street W",
-      "location": "Toronto, CAN"
+      "location": "Toronto, ON"
     },
     "contact": {
       "name": "Dimity Durian",
@@ -19,7 +19,7 @@
     "name": "The Place",
     "address": {
       "street": "667 Some Street W",
-      "location": "Toronto, CAN"
+      "location": "Toronto, ON"
     },
     "contact": {
       "name": "Danbi Bambi",
@@ -34,7 +34,7 @@
     "name": "Stocker Contstruction",
     "address": {
       "street": "8893 King Street W",
-      "location": "Toronto, CAN"
+      "location": "Toronto, ON"
     },
     "contact": {
       "name": "Franky Zee",
@@ -49,7 +49,7 @@
     "name": "Box Factory",
     "address": {
       "street": "898 Dock Street W",
-      "location": "Toronto, CAN"
+      "location": "Toronto, ON"
     },
     "contact": {
       "name": "Paulo Spice",
@@ -64,7 +64,7 @@
     "name": "Janet Planet",
     "address": {
       "street": "172 Dat Street W",
-      "location": "Toronto, CAN"
+      "location": "Toronto, ON"
     },
     "contact": {
       "name": "Roisin Salt",
@@ -79,7 +79,7 @@
     "name": "Heather Pens",
     "address": {
       "street": "172 Dat Street W",
-      "location": "Toronto, CAN"
+      "location": "Toronto, ON"
     },
     "contact": {
       "name": "Heather Olson",

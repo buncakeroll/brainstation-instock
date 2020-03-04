@@ -7,16 +7,38 @@
     padding-bottom: 0;
     font-size: 13px;
 
+    @include tablet{
+        padding: 16px 24px 0 24px;
+    }
+
+    @include desktop{
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        padding-bottom: 24px;
+        margin: 24px 96px 0 96px;
+        border-bottom: solid 2px $inputBorder;
+    }
+
     &__nameaddressarrow{
         display: flex;
         justify-content: space-between;
         height: 55px;
+
+        @include desktop{
+            width: 200px;
+            height: 40px;
+        }
     }
 
     &__name{
         font-weight: bold;
         margin: 0;
         margin-bottom: 7px;
+
+        @include desktop{
+            font-size: 15px;
+        }
     }
 
     &__address, &__contactname, &__contactposition, &__contactnum, &__contactemail, &__categories{
@@ -28,14 +50,36 @@
     }
 
     &__arrow{
-        // padding-right: 8px;
-        // padding-bottom: 50px;
         height: 20px;
         width: 20px;
+
+        @include desktop{
+            display: none;
+        }
     }
 
     &__contact, &__contactinfo{
         height: 55px;
+
+        @include tablet{
+            width: 194px;
+        }
+
+        @include desktop{
+            height: 40px;
+        }
+    }
+
+    &__contact{
+        @include desktop{
+            margin-right: 14px;
+        }
+    }
+
+    &__contactinfo{
+        @include desktop{
+            margin-right: 127px;
+        }
     }
 
     &__contactname, &__contactnum{
@@ -45,5 +89,28 @@
     &__categories{
         border-bottom: solid 1px $inputBorder;
         padding-bottom: 16px;
+
+        @include tablet{
+            border: none;
+            width: 194px;
+        }
+
+        @include desktop{
+            padding:0;
+        }
+    }
+
+    &__threecs{
+        @include tablet{
+            display: flex;
+            padding-right: 30px;
+            border-bottom: solid 1.5px $inputBorder;
+        }
+
+        @include desktop{
+            width: 780px;
+            border:none;
+            align-items: center;
+        }
     }
 }
