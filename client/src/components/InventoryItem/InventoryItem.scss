@@ -14,7 +14,9 @@
     padding-top: 1.5rem;
 
     @include tablet {
-
+        height: 100px;
+        padding: 0;
+        align-items: center;
     }
 
     &:first-of-type {
@@ -34,6 +36,7 @@
             display: flex;
             flex-wrap: nowrap;
             justify-content: space-between;
+            align-items: center;
         }
     }
 
@@ -51,6 +54,10 @@
         font-size: 1rem;
         margin-bottom: 1rem;
         font-family: 'Avenir-Demi';
+
+        @include tablet {
+            margin: 0;
+        }
     }
 
     &__info {
@@ -60,27 +67,30 @@
             @extend .item__info;
             margin-bottom: 1.5rem;
         }
+
+        @include tablet {
+            margin: 0;
+        }
     }
 
     &__kebab {
         align-self: flex-start;
         min-width: 4.5px;
+        @include tablet {
+            align-self: center;
+        }
     }
 
     &__box-start {
         display: inline-block;
         width: 190px;
-        color: $accent;
-        font-family: 'Avenir-Demi';
-        font-size: 0.75rem;
+        height: fit-content;
     }
 
     &__box-reg {
         display: inline-block;
+        height: fit-content;
         width: 95px;
-        color: $accent;
-        font-family: 'Avenir-Demi';
-        font-size: 0.75rem;
 
         &--marg {
             @extend .item__box-reg;

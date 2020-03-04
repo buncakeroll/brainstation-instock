@@ -4,10 +4,11 @@ import dots from '../../assets/icons/svg/Icon-kebab-default.svg';
 
 const InventoryItem = (props) => {
 
-    const {name, description, lastOrdered, quantity, city, country, isInStock} = props.item
-
-    let inStock = true;
-    isInStock ? inStock = 'In Stock' : inStock = 'Out of Stock';
+    const {name, description, lastOrdered, quantity, city, country, isInstock} = props.item
+    let inStock = 'Out of Stock';
+    if (isInstock) {
+        inStock = 'In Stock';
+    }
 
 
     return (
