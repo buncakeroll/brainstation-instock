@@ -1,11 +1,13 @@
-// from styles folder
+// from sass folder
 
-@import './styles/colors';
-@import './styles/fonts';
-@import './styles/mixins';
-@import './styles/reset';
+@import "./sass/abstracts/functions";
+@import "./sass/abstracts/mixins";
+@import "./sass/abstracts/variables";
+
+@import "./sass/base/reset";
+@import "./sass/base/typography";
 
 // from component folders
 
-@import './components/Header/Header.scss';
-@import './components/NavBar/NavBar.scss';
+@import "./components/Header/Header.scss";
+@import "./components/NavBar/NavBar.scss";
