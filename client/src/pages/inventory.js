@@ -1,6 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
+import CreateProduct from '../components/AddComponent/CreateProduct';
 
-export default function Inventory() {
-    return <div></div>;
+export default class Inventory extends Component {
+    render() {
+      return (
+        <CreateProduct />
+      )
+    }
   }
   
