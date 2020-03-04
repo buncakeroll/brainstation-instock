@@ -34,6 +34,10 @@
             justify-content: space-between;
             align-items: center;
         }
+
+        @include tablet{
+            margin-bottom: 16px;
+        }
     }
 }
 
@@ -43,7 +47,7 @@ input[type=text][name='search'] {
     border-radius: 5px;
     border: 1px solid $inputBorder;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     background: url(../../assets/icons/svg/Icon-search.svg) no-repeat 9px 9px;
     background-color: $inputBg;
     text-indent: 15%;
@@ -55,6 +59,7 @@ input[type=text][name='search'] {
         text-indent: 18%;
         padding-top: 2px;
     }
+
     @include desktop {
         width: 252px;
     }

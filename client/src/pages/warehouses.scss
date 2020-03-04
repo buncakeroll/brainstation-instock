@@ -1,0 +1,41 @@
+@import './../styles/colors.scss';
+@import './../styles/fonts.scss';
+@import './../styles/mixins.scss';
+
+.locations{
+
+    &__labelscontainer{
+        display: none;
+        width: 100%;
+        padding: 20px 96px 0 96px;
+
+        @include desktop{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__label{
+        color: $accent;
+        font-weight: bold;
+        font-size: 13px;
+        width: 200px;
+
+        &1{
+            margin-right: 24px;
+        }
+
+        &2{
+            margin-right: 10px;
+        }
+
+        &3{
+            margin-right: 120px;
+        }
+    }
+
+    &__container{
+        display: flex;
+        width: 780px;
+    }
+}
