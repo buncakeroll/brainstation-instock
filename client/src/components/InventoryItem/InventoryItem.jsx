@@ -20,7 +20,7 @@ const InventoryItem = (props) => {
                 <div className='item__invisible'><h3 className='item__title'>ITEM</h3></div>
                 <div className="item__box-start">
                     <h4 className='item__name'>{name}</h4>
-                    <p className='item__info--space'>{textEllipsis(description, 55)}</p>
+                    <p className='item__info--space'>{textEllipsis(description, 35)}</p>
                 </div>
                 
                 <div className='item__invisible'><h3 className='item__title'>LAST ORDERED</h3></div>
@@ -37,8 +37,13 @@ const InventoryItem = (props) => {
             </div>
             </Link>
             <div className='item__kebab-box' tabIndex='0'>
+<<<<<<< HEAD
+                <img src={dots} className='item__kebab'/>
+                <div className='item__drop' onClick={props.deleteHandler}>Remove</div>
+=======
                 <img src={dots} className='item__kebab' alt='delete icon'/>
                 <div className='item__drop'>Remove</div>
+>>>>>>> develop
             </div>
         </div>
     )
