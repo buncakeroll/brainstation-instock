@@ -37,7 +37,7 @@ const InventoryItem = (props) => {
             </div>
             </Link>
             <div className='item__kebab-box' tabIndex='0'>
-                <img src={dots} className='item__kebab'/>
+                <img src={dots} className='item__kebab' alt='delete icon'/>
                 <div className='item__drop'>Remove</div>
             </div>
         </div>

@@ -13,7 +13,8 @@ textarea {
     height: 5rem !important;
 }
 
-#country {
+#country,
+#location {
     width: 100% !important;
 }
 .form--container {
@@ -26,6 +27,7 @@ textarea {
     left: 0;
     z-index: 100;
     background: rgba(0, 0, 0, 0.5);
+    transition: ease all .5s;
 
     @include large-mobile {
         justify-content: center;
@@ -44,21 +46,17 @@ textarea {
     padding: 1rem 2rem;
     width: 100%;
     background: $white;
+    overflow-y: scroll;
     overflow: scroll;
 
     @include large-mobile {
         display: flex;
         flex-direction: column;
+        min-width: 36rem;
+        max-width: 36rem;
+        min-height: 40rem;
         max-height: 40rem;
         border-radius: 5px;
-    }
-
-    @include desktop {
-        display: flex;
-        flex-direction: column;
-        padding: 3rem;
-        width: 60rem;
-        height: 40rem;
     }
 
     &__title {
@@ -75,10 +73,6 @@ textarea {
         flex-direction: column;
         width: 100%;
 
-        @include desktop {
-            width: 40rem;
-        }
-
         form {
             .row {
                 @include large-mobile {
@@ -92,14 +86,11 @@ textarea {
                         flex-direction: column;
                         width: 50vw;
                     }
-
-                    @include desktop {
-                        
-                    }
                 }
 
                 input,
-                #country {
+                #country,
+                #location {
                     
                     @include large-mobile {
                         margin: 0 0 1.5rem;
@@ -108,19 +99,7 @@ textarea {
                         background: $inputBg;
                         border-radius: 5px;
                     }
-
-                    @include desktop {
-                        width: auto;
-                    }
                 }
-
-                #status {
-                    margin: 0.75rem 0;
-                    @include desktop {
-                        width: 12.5rem;
-                    }
-                }
-
             }
 
             .column {
@@ -133,7 +112,7 @@ textarea {
 
             label {
                 margin-bottom: 0.5rem;
-                font-family: 'Avenir-bold';
+                font-size: 0.90rem;
                 color: $accent;
                 text-transform: uppercase;
             }
@@ -144,10 +123,6 @@ textarea {
                 @include large-mobile {
                     margin-right: 1.5rem;
                 }
-
-                @include desktop {
-                    margin-right: 2.5rem;
-                }
             }
 
             .form__buttons {
@@ -155,17 +130,12 @@ textarea {
                     display: flex;
                     flex-direction: row-reverse;
                 }
-
-                @include desktop {
-                    display: flex;
-                    flex-direction: row-reverse;
-                    width: 100%;
-                }
             }
 
             input,
             textarea,
-            #country {
+            #country,
+            #location {
                 margin: 0.5rem 0 1.5rem;
                 height: 3rem;
                 background: $inputBg;
@@ -185,13 +155,6 @@ textarea {
                         width: 62.5vw;
                         padding: 1vw;
                     }
-
-                    @include desktop {
-                        height: 5rem;
-                        width: 30rem;
-                        margin-bottom: 2.5rem;
-                        padding: 1rem;
-                    }
                 }
             }
 
@@ -200,16 +163,12 @@ textarea {
                 flex-direction: row;
                 align-items: baseline;
                 align-items: center;
+                height: 4rem;
 
                 @include large-mobile {
                     text-align: left;
-                    margin-bottom: 1.5rem;
-                    width: 29vw;
-                }
-
-                @include desktop {
-                    text-align: left;
-                    margin-bottom: 1.5rem;
+                    width: 100%;
+                    height: 44px;
                 }
 
                 p {
@@ -228,15 +187,6 @@ textarea {
 
                 @include large-mobile {
                     width: 10rem;
-                    border-radius: 5px;
-                    height: 3rem;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                }
-
-                @include desktop {
-                    width: 10rem;
-                    height: 3rem;
                     border-radius: 5px;
                     height: 3rem;
                     font-weight: bold;
