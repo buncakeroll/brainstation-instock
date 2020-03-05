@@ -6,7 +6,7 @@ import AddButton from './AddButton';
 export default class CreateProduct extends Component {
     state = {
         inStock: false,
-        inventoryList: [],
+        inventoryList: {},
         displayForm: false
     };
 

@@ -13,7 +13,8 @@ textarea {
     height: 5rem !important;
 }
 
-#country {
+#country,
+#location {
     width: 100% !important;
 }
 .form--container {
@@ -99,7 +100,8 @@ textarea {
                 }
 
                 input,
-                #country {
+                #country,
+                #location {
                     
                     @include large-mobile {
                         margin: 0 0 1.5rem;
@@ -165,7 +167,8 @@ textarea {
 
             input,
             textarea,
-            #country {
+            #country,
+            #location {
                 margin: 0.5rem 0 1.5rem;
                 height: 3rem;
                 background: $inputBg;
