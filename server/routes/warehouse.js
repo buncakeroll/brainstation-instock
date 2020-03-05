@@ -18,9 +18,10 @@ router.get('/:id', (req, res) => {
   }
 
   else {
-    const data = [];
-    data.push(warehouseData);
-    data.push(inventoryData);
+    const data = {
+      ...warehouseData,
+      inventory: inventoryData
+    };
 
     res.json(data);
   }
