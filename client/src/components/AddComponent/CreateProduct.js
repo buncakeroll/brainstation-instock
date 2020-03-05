@@ -23,7 +23,6 @@ export default class CreateProduct extends Component {
     };
 
     submitHandler = (event) => {
-
         let productinput = event.target.product.value;
         let descriptioninput = event.target.description.value;
         let orderedinput = event.target.ordered.value;
@@ -52,7 +51,7 @@ export default class CreateProduct extends Component {
             city: cityinput,
             country: countryinput,
             quantity: quantityinput,
-            isInStock: inStock,
+            isInstock: inStock,
             warehouseId: 'W0'
         }).then(res => {
             console.log(res.data)
@@ -98,7 +97,7 @@ export default class CreateProduct extends Component {
                     </div>
                     <div className='column'>
                     <label>Last Ordered</label>
-                    <input type='date' id='ordered' placeholder='yyyy-mm-dd' />
+                    <input type='text' id='ordered' placeholder='mm/dd/yyyy' />
                     </div>
                 </div>
                 <div className='row'>
