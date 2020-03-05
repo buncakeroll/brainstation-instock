@@ -35,49 +35,52 @@ export default class CreateWarehouse extends Component {
         return alert('Please enter a warehouse name');
         }
         if (warehouseIdInput === '') {
-        return alert('Please enter a quantity');
+        return alert('Please enter a warehouse id');
         }
         if (warehouseAddressInput === '') {
-        return alert('Please enter an order date');
+        return alert('Please enter an address');
         }
         if (locationInput === '') {
-            return alert('Please enter a city');
+            return alert('Please enter a location');
         }
         if (contactNameInput === '') {
-            return alert('Please enter a city');
+            return alert('Please enter a name');
         }
         if (contactPositionInput === '') {
-            return alert('Please enter a city');
+            return alert('Please enter a position');
         }
         if (contactTelephoneInput === '') {
-            return alert('Please enter a city');
+            return alert('Please enter a phone number');
         }
         if (contactEmailInput === '') {
-            return alert('Please enter a city');
+            return alert('Please enter an email address');
         }
 
-        axios.post('http://localhost:8080/warhouses', {
-        id: warehouseIdInput,    
-        name: warehouseNameInput,
-        address: {
-            street: warehouseAddressInput,
-            location: locationInput
-        },
-        contact: {
-            name: contactNameInput,
-            position: contactPositionInput,
-            phone: contactTelephoneInput,
-            email: contactEmailInput
-        },
-        inventoryCategories: descriptionInput
+        const newWarehouse = axios.post('http://localhost:8080/warehouses', {
+            id: warehouseIdInput,    
+            name: warehouseNameInput,
+            address: {
+                street: warehouseAddressInput,
+                location: locationInput
+            },
+            contact: {
+                name: contactNameInput,
+                position: contactPositionInput,
+                phone: contactTelephoneInput,
+                email: contactEmailInput
+            },
+            inventoryCategories: descriptionInput
+        }).then(res => {
+            console.log(res.data)
+            axios.get('http://localhost:8080/warehouses')
+            .then(res => {
+                this.setState({
+                    warehouseList: [this.state.warehouseList, newWarehouse]
+                    // displayForm: false,
+                    // warehouseList: res.data
+                })
             })
-            .then(response => {
-                console.log(response.data);
-            this.setState({
-                displayForm: false,
-                warehouseList: response.data
-                });
-            });
+        })
     };
 
     render() {
