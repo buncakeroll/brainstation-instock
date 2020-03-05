@@ -23,6 +23,7 @@ export default class CreateProduct extends Component {
     };
 
     submitHandler = (event) => {
+
         let productinput = event.target.product.value;
         let descriptioninput = event.target.description.value;
         let orderedinput = event.target.ordered.value;

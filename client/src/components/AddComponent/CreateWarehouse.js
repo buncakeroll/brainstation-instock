@@ -20,7 +20,7 @@ export default class CreateWarehouse extends Component {
         }
     };
     submitHandler = event => {
-        event.preventDefault();
+
         let warehouseNameInput = event.target.warehouseName.value;
         let warehouseIdInput = event.target.warehouseId.value;
         let warehouseAddressInput = event.target.warehouseAddress.value;
@@ -56,7 +56,7 @@ export default class CreateWarehouse extends Component {
             return alert('Please enter an email address');
         }
 
-        const newWarehouse = axios.post('http://localhost:8080/warehouses', {
+        const newWarehouse = axios.post('http://localhost:8080/warehouse', {
             id: warehouseIdInput,    
             name: warehouseNameInput,
             address: {
@@ -72,7 +72,7 @@ export default class CreateWarehouse extends Component {
             inventoryCategories: descriptionInput
         }).then(res => {
             console.log(res.data)
-            axios.get('http://localhost:8080/warehouses')
+            axios.get('http://localhost:8080/warehouse')
             .then(res => {
                 this.setState({
                     warehouseList: [this.state.warehouseList, newWarehouse]
