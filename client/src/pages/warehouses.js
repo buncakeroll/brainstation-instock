@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DisplayThing from './../components/DisplayPage/DisplayPage';
 import WarehouseCard from './../components/WarehouseCard/WarehouseCard';
+import CreateWarehouse from './../components/AddComponent/CreateWarehouse';
 import './warehouses.scss';
 
 class Warehouses extends Component {
@@ -19,6 +20,7 @@ class Warehouses extends Component {
         </div>
       </div>
       <WarehouseCard />
+      <CreateWarehouse />
     </div >
     )
   }

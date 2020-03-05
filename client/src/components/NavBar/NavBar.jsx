@@ -7,7 +7,7 @@ export default class NavBar extends Component {
         return (
             <div className='navbar'>
                 <div className='navbar--logo'>
-                    <NavLink to='/inventory'>
+                    <NavLink to='/warehouses'>
                         <img src={ Logo } alt='Instock Logo'/>
                     </NavLink>
                 </div>

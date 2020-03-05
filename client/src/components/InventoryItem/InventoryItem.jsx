@@ -37,8 +37,13 @@ const InventoryItem = (props) => {
             </div>
             </Link>
             <div className='item__kebab-box' tabIndex='0'>
+<<<<<<< HEAD
                 <img src={dots} className='item__kebab'/>
                 <div className='item__drop' onClick={props.deleteHandler}>Remove</div>
+=======
+                <img src={dots} className='item__kebab' alt='delete icon'/>
+                <div className='item__drop'>Remove</div>
+>>>>>>> develop
             </div>
         </div>
     )

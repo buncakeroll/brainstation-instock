@@ -6,7 +6,7 @@ import AddButton from './AddButton';
 export default class CreateProduct extends Component {
     state = {
         inStock: false,
-        inventoryList: [],
+        inventoryList: {},
         displayForm: false
     };
 
@@ -22,8 +22,8 @@ export default class CreateProduct extends Component {
         }
     };
 
-    submitHandler = event => {
-        event.preventDefault();
+    submitHandler = (event) => {
+
         let productinput = event.target.product.value;
         let descriptioninput = event.target.description.value;
         let orderedinput = event.target.ordered.value;
@@ -45,7 +45,7 @@ export default class CreateProduct extends Component {
         return alert('Please enter a city');
         }
 
-        axios.post('http://localhost:8080/inventory', {
+        const newProduct = axios.post('http://localhost:8080/inventory', {
             name: productinput,
             description: descriptioninput,
             lastOrdered: orderedinput,
@@ -54,13 +54,17 @@ export default class CreateProduct extends Component {
             quantity: quantityinput,
             isInStock: inStock,
             warehouseId: 'W0'
-            }).then(response => {
-                console.log(response.data);
-            this.setState({
-                displayForm: false,
-                inventoryList: response.data
-                });
-            });
+        }).then(res => {
+            console.log(res.data)
+            axios.get('http://localhost:8080/inventory')
+            .then(res => {
+                this.setState({
+                    inventoryList: [this.state.inventoryList, newProduct]
+                    // displayForm: false,
+                    // inventoryList: res.data
+                })
+            })
+        })
     };
 
     statusUpdate = checked => {
@@ -69,6 +73,8 @@ export default class CreateProduct extends Component {
             inStock: checked
         });
     };
+
+
 
     render() {
     let stock;
