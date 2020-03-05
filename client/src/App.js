@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import warehouses from "./pages/warehouses";
 import warehouseDetails from "./pages/warehouseDetails";
 import inventory from "./pages/inventory";
-import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar.jsx";
 import './App.scss';
 

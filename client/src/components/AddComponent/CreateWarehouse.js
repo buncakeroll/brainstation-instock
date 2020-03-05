@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Switch from 'react-switch';
 import AddButton from './AddButton';
 
 export default class CreateWarehouse extends Component {
