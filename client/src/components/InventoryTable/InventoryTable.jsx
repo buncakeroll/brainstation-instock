@@ -21,6 +21,15 @@ class InventoryTable extends Component {
         })
     }
 
+    componentDidUpdate() {
+        //Checks if this table is expected to display a filtered inventory list
+        if (this.props.list && this.state.list !== this.props.list) {
+            this.setState({
+                list: this.props.list
+            })
+        }
+    }
+
     render() {
         return (
             <section className='table'>

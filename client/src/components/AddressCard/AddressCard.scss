@@ -1,0 +1,35 @@
+@import '../../styles/fonts';
+@import '../../styles/colors';
+
+* {
+    color: $primary;
+    font-family: 'Avenir';
+}
+
+.address {
+    width: 100%;
+    margin: 2rem 0;
+
+    &__box {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+
+    &__title {
+        color: $accent;
+        font-family: 'Avenir-Demi';
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    &__info {
+        font-size: 0.85rem;
+
+        &--spaced {
+            @extend .address__info;
+            margin-top: 1.5rem;
+        }
+    }
+}

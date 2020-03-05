@@ -3,6 +3,8 @@ import axios from 'axios';
 import './warehouseDetails.scss';
 import backArrow from './../assets/icons/svg/Icon-back-arrow.svg';
 import { Link } from 'react-router-dom';
+import AddressCard from '../components/AddressCard/AddressCard';
+import InventoryTable from '../components/InventoryTable/InventoryTable';
 
 class WarehouseDetails extends Component {
     state = {
@@ -14,9 +16,8 @@ class WarehouseDetails extends Component {
         axios.get(`http://localhost:8080/warehouse/${id}`)
             .then(result => {
                 this.setState({
-                    warehouseData: result.data[0],
+                    warehouseData: result.data
                 })
-                console.log(this.state.warehouseData)
             })
             .catch(error => {
                 console.log(error)
@@ -36,6 +37,8 @@ class WarehouseDetails extends Component {
                         <p className="details__name">{this.state.warehouseData.name}</p>
                     </div>
                 </Link>
+                <AddressCard warehouseData={this.state.warehouseData}/>
+                <InventoryTable list={this.state.warehouseData.inventory}/>
             </div >
         )
     }
