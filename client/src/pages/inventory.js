@@ -6,8 +6,10 @@ import axios from 'axios';
 
 export default class Inventory extends Component {
 
+
   state = {
-    list: []
+    list: [],
+    deleted: false
   }
 
   updateList() {
@@ -16,6 +18,19 @@ export default class Inventory extends Component {
             list: data.data
         })
     })
+  }
+
+  deleteHandler() {
+    this.setState({
+      deleted: true
+    })
+  }
+
+  componentDidUpdate() {
+    if (this.state.deleted) {
+      //axios.get
+      //then set state list to axios get result and changed deleted to false!
+    }
   }
 
   componentDidMount() {
@@ -27,7 +42,7 @@ export default class Inventory extends Component {
         <div>
           <DisplayPage heading='Inventory'/>
           <CreateProduct addHandler={this.updateList.bind(this)}/>
-          <InventoryTable list={this.state.list} />
+          <InventoryTable list={this.state.list} deleteHandler={this.deleteHandler}/>
         </div>
       )
     }

@@ -104,7 +104,7 @@
     }
 
     &__drop {
-        display: none;
+        display: flex;
         position: absolute;
         width: 160px;
         padding: 0 1rem;
