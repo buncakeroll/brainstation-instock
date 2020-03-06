@@ -4,51 +4,78 @@ import dots from '../../assets/icons/svg/Icon-kebab-default.svg';
 import {Link} from 'react-router-dom';
 import textEllipsis from 'text-ellipsis';
 
-const InventoryItem = (props) => {
+class InventoryItem extends React.Component{
 
-    const {id, name, description, lastOrdered, quantity, city, country, isInstock} = props.item
-    let inStock = 'Out of Stock';
-    if (isInstock) {
-        inStock = 'In Stock';
+    componentDidMount() {
+        document.addEventListener('click', this.toggleAway)
     }
 
-    const kebabClick = (event) => {
-        let drop = document.getElementById(id)
-        if (drop.style.display === 'flex') {
-            drop.style.display = 'none';
-        } else {
-            drop.style.display = 'flex';
+    state = {
+        clicked: false
+    }
+
+    toggleAway = (event) => {
+        if (event.target.className !== 'item__kebab') {
+            if (this.state.clicked === true) {
+                this.setState({
+                    clicked: false
+                })
+            }
         }
     }
-    return (
-        <div className='item'>
-        <Link to={`/inventory/${id}`} className='item__link'>
-            <div className='item__box'>
-                <div className='item__invisible'><h3 className='item__title'>ITEM</h3></div>
-                <div className="item__box-start">
-                    <h4 className='item__name'>{name}</h4>
-                    <p className='item__info--space'>{textEllipsis(description, 35)}</p>
+
+    toggle = (event) => {
+        this.setState({
+            clicked: !this.state.clicked
+        })
+    }
+
+    deleteItem() {
+        //call delete to server based on this.props.item.id
+        //then =>
+            this.props.deleteHandler();
+    }
+
+    render() {
+        const {id, name, description, lastOrdered, quantity, city, country, isInstock} = this.props.item;
+        let inStock = 'Out of Stock';
+        if (isInstock) {
+            inStock = 'In Stock';
+        }
+        return (
+            <div className='item'>
+            <Link to={`/inventory/${id}`} className='item__link'>
+                <div className='item__box'>
+                    <div className='item__invisible'><h3 className='item__title'>ITEM</h3></div>
+                    <div className="item__box-start">
+                        <h4 className='item__name'>{name}</h4>
+                        <p className='item__info--space'>{textEllipsis(description, 35)}</p>
+                    </div>
+                    
+                    <div className='item__invisible'><h3 className='item__title'>LAST ORDERED</h3></div>
+                    <div className="item__box-reg"><p className='item__info--space'>{lastOrdered}</p></div>
+                    
+                    <div className='item__invisible'><h3 className='item__title'>LOCATION</h3></div>
+                    <div className="item__box-reg"><p className='item__info--space'>{`${city}, ${country}`}</p></div>
+                    
+                    <div className='item__invisible'><h3 className='item__title'>QUANTITY</h3></div>
+                    <div className="item__box-reg"><p className='item__info--space'>{quantity}</p></div>
+                    
+                    <div className='item__invisible'><h3 className='item__title'>STATUS</h3></div>
+                    <div className="item__box-reg--marg"><p className='item__info--space'>{inStock}</p></div>
                 </div>
-                
-                <div className='item__invisible'><h3 className='item__title'>LAST ORDERED</h3></div>
-                <div className="item__box-reg"><p className='item__info--space'>{lastOrdered}</p></div>
-                
-                <div className='item__invisible'><h3 className='item__title'>LOCATION</h3></div>
-                <div className="item__box-reg"><p className='item__info--space'>{`${city}, ${country}`}</p></div>
-                
-                <div className='item__invisible'><h3 className='item__title'>QUANTITY</h3></div>
-                <div className="item__box-reg"><p className='item__info--space'>{quantity}</p></div>
-                
-                <div className='item__invisible'><h3 className='item__title'>STATUS</h3></div>
-                <div className="item__box-reg--marg"><p className='item__info--space'>{inStock}</p></div>
+                </Link>
+                <div className='item__kebab-box' tabIndex='0'>
+                    <img src={dots} className='item__kebab' onClick={this.toggle}/>
+                    {
+                        this.state.clicked && (
+                            <div id={id} className='item__drop' onClick={this.deleteItem}>Remove</div>
+                        )
+                    }
+                </div>
             </div>
-            </Link>
-            <div className='item__kebab-box' tabIndex='0'>
-                <img src={dots} className='item__kebab' onClick={kebabClick}/>
-                <div id={id} className='item__drop' onClick={props.deleteHandler}>Remove</div>
-            </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default InventoryItem;

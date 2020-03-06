@@ -5,10 +5,6 @@ import axios from 'axios';
 
 const InventoryTable = (props) => {
 
-    const deleteHandler = (event) => {
-        //handles deletion of item and re-renders inventory list
-    }
-
     if (props.list) {
         return (
             <section className='table'>
@@ -22,7 +18,7 @@ const InventoryTable = (props) => {
                     </div>
                     {
                         props.list.map(item => {
-                            return <InventoryItem item={item} key={item.id} deleteHandler={deleteHandler}/>
+                            return <InventoryItem item={item} key={item.id} deleteHandler={props.deleteHandler}/>
                         })
                     }
                 
