@@ -22,6 +22,10 @@ export default class CreateProduct extends Component {
         }
     };
 
+    stopPropagation = event => {
+        event.stopPropagation();
+    }
+
     submitHandler = (event) => {
         event.preventDefault();
         let productinput = event.target.product.value;
@@ -67,8 +71,6 @@ export default class CreateProduct extends Component {
         });
     };
 
-
-
     render() {
     let stock;
     if (this.state.inStock === true) {
@@ -79,8 +81,8 @@ export default class CreateProduct extends Component {
     let form;
     if (this.state.displayForm) {
         form = (
-        <div className='form--container'>
-            <div className='form--new-form'>
+        <div className='form--container' onClick={this.toggleForm}>
+            <div className='form--new-form' onclick={this.stopPropagation}>
             <h1 className='form--new-form__title'>Create New</h1>
             <div className='form--new-form__form'>
                 <form onSubmit={this.submitHandler}>

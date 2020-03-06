@@ -19,6 +19,11 @@ export default class CreateWarehouse extends Component {
         });
         }
     };
+
+    stopPropagation = event => {
+        event.stopPropagation();
+    };
+
     submitHandler = event => {
 
         let warehouseNameInput = event.target.warehouseName.value;
@@ -87,8 +92,8 @@ export default class CreateWarehouse extends Component {
     let form;
     if (this.state.displayForm) {
         form = (
-        <div className='form--container'>
-            <div className='form--new-form'>
+        <div className='form--container' onClick={this.toggleForm}>
+            <div className='form--new-form' onClick={this.stopPropagation}>
             <h1 className='form--new-form__title'>Create New</h1>
             <div className='form--new-form__form'>
                 <form onSubmit={this.submitHandler}>
@@ -134,7 +139,7 @@ export default class CreateWarehouse extends Component {
                         <input type='email' id='contactEmail' placeholder='Warhouse ID' />
                     </div>
                 </div>
-                <label>Item Description</label>
+                <label>Categories</label>
                 <textarea id='description' placeholder='(Optional)' />
                 <div className='form__buttons'>
                     <button id='Save'>Save</button>
