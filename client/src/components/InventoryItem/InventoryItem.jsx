@@ -12,7 +12,14 @@ const InventoryItem = (props) => {
         inStock = 'In Stock';
     }
 
-
+    const kebabClick = (event) => {
+        let drop = document.getElementById(id)
+        if (drop.style.display === 'flex') {
+            drop.style.display = 'none';
+        } else {
+            drop.style.display = 'flex';
+        }
+    }
     return (
         <div className='item'>
         <Link to={`/inventory/${id}`} className='item__link'>
@@ -37,8 +44,8 @@ const InventoryItem = (props) => {
             </div>
             </Link>
             <div className='item__kebab-box' tabIndex='0'>
-                <img src={dots} className='item__kebab'/>
-                <div className='item__drop' onClick={props.deleteHandler}>Remove</div>
+                <img src={dots} className='item__kebab' onClick={kebabClick}/>
+                <div id={id} className='item__drop' onClick={props.deleteHandler}>Remove</div>
             </div>
         </div>
     )

@@ -14,6 +14,16 @@
         font-size: 1.5rem;
         color: $primary;
         margin-left: 15px;
+        margin-top: 2px;
+
+        @include tablet {
+            font-size: 2.25rem;
+            margin-top: 5px;
+        }
+
+        @include desktop {
+            margin-top: 6px;
+        }
     }
 
     &__link{
@@ -38,5 +48,11 @@
         background-color: $inputBg;
         height: 100%;
         padding-bottom: 0.5rem;
+        
+
+        @include tablet {
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+        }
     }
 }

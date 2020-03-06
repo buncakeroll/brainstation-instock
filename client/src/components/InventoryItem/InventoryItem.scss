@@ -94,10 +94,6 @@
             &:hover {
                 cursor: pointer;
             }
-            &:focus .item__drop {
-                display: flex;
-            
-            }
             &:focus .item__kebab{
                 filter: invert(1);
             }

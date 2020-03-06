@@ -42,10 +42,23 @@
 
     &__info {
         font-size: 0.85rem;
+        color: $primary;
 
         &--spaced {
             @extend .address__info;
             margin-top: 1.5rem;
+        }
+
+        @include tablet {
+            font-size: 0.9rem;
+        }
+
+        @include desktop {
+            font-size: 1rem;
+        }
+
+        &--slant {
+            font-family: 'Avenir-Side';
         }
     }
 }
