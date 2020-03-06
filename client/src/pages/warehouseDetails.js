@@ -37,8 +37,12 @@ class WarehouseDetails extends Component {
                         <p className="details__name">{this.state.warehouseData.name}</p>
                     </div>
                 </Link>
-                <AddressCard warehouseData={this.state.warehouseData}/>
-                <InventoryTable list={this.state.warehouseData.inventory}/>
+                <div className="details__namearrow">
+                    <AddressCard warehouseData={this.state.warehouseData}/>
+                </div>
+                <div className='details__inv'>
+                    <InventoryTable list={this.state.warehouseData.inventory} />
+                </div>
             </div >
         )
     }

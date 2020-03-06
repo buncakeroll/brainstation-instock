@@ -6,7 +6,7 @@ const AddressCard = (props) => {
     if (props.warehouseData.address) {
         return (
             <div className='address'>
-                <div className='address__box'>
+                <div className='address__box--indent'>
                     <h3 className='address__title'>ADDRESS</h3>
                     <p className='address__info'>{props.warehouseData.address.street}</p>
                     <p className='address__info--spaced'>{props.warehouseData.address.location}</p>

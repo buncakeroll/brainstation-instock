@@ -9,7 +9,7 @@ export default class Inventory extends Component {
         <div>
           <DisplayPage heading='Inventory'/>
           <CreateProduct />
-          <InventoryTable list={undefined}/>
+          <InventoryTable list={undefined} />
         </div>
       )
     }

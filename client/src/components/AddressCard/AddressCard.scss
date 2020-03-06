@@ -1,16 +1,36 @@
 @import '../../styles/fonts';
 @import '../../styles/colors';
+@import '../../styles/mixins';
+@import '../../styles/reset';
 
 .address {
     width: 100%;
-    margin: 2rem 0;
-    padding: 0 1rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+        border-top: 1.5px solid $inputBorder;
+        padding-top: 2rem;
+        padding-bottom: 0.5rem;
+    }
 
     &__box {
         width: 200px;
-        display: flex;
-        flex-direction: column;
+        display: inline-block;
         margin-bottom: 1.5rem;
+
+        &--indent {
+            @extend .address__box;
+            @include tablet {
+                margin-right: 190px;
+            }
+            @include desktop {
+                margin-right: 300px;
+            }
+        }
     }
 
     &__title {
