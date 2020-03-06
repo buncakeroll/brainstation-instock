@@ -20,8 +20,6 @@ const InventoryItem = (props) => {
             drop.style.display = 'flex';
         }
     }
-
-
     return (
         <div className='item'>
         <Link to={`/inventory/${id}`} className='item__link'>

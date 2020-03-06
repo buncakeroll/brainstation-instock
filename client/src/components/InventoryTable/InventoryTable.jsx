@@ -3,34 +3,13 @@ import './InventoryTable.scss';
 import InventoryItem from '../InventoryItem/InventoryItem';
 import axios from 'axios';
 
-class InventoryTable extends Component {
+const InventoryTable = (props) => {
 
-    state = {
-        list: []
-    }
-
-    deleteHandler(event) {
+    const deleteHandler = (event) => {
         //handles deletion of item and re-renders inventory list
     }
 
-    componentDidMount() {
-        axios.get('http://localhost:8080/inventory').then(data => {
-            this.setState({
-                list: data.data
-            })
-        })
-    }
-
-    componentDidUpdate() {
-        //Checks if this table is expected to display a filtered inventory list
-        if (this.props.list && this.state.list !== this.props.list) {
-            this.setState({
-                list: this.props.list
-            })
-        }
-    }
-
-    render() {
+    if (props.list) {
         return (
             <section className='table'>
                 <div className='table__wrap'>
@@ -42,14 +21,16 @@ class InventoryTable extends Component {
                         <div className='table__box-reg--marg'>STATUS</div>
                     </div>
                     {
-                        this.state.list.map(item => {
-                            return <InventoryItem item={item} key={item.id} deleteHandler={this.deleteHandler}/>
+                        props.list.map(item => {
+                            return <InventoryItem item={item} key={item.id} deleteHandler={deleteHandler}/>
                         })
                     }
                 
                 </div>
             </section>
         )
+    } else {
+        return null;
     }
 }
 

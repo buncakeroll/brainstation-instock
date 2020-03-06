@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Switch from 'react-switch';
 import AddButton from './AddButton';
+import {v4 as uuid} from 'uuid'
 
 export default class CreateProduct extends Component {
     state = {
         inStock: false,
-        inventoryList: {},
         displayForm: false
     };
 
@@ -23,6 +23,7 @@ export default class CreateProduct extends Component {
     };
 
     submitHandler = (event) => {
+        event.preventDefault();
         let productinput = event.target.product.value;
         let descriptioninput = event.target.description.value;
         let orderedinput = event.target.ordered.value;
@@ -44,7 +45,8 @@ export default class CreateProduct extends Component {
         return alert('Please enter a city');
         }
 
-        const newProduct = axios.post('http://localhost:8080/inventory', {
+       axios.post('http://localhost:8080/inventory', {
+            id: uuid(),
             name: productinput,
             description: descriptioninput,
             lastOrdered: orderedinput,
@@ -54,20 +56,12 @@ export default class CreateProduct extends Component {
             isInstock: inStock,
             warehouseId: 'W0'
         }).then(res => {
-            console.log(res.data)
-            axios.get('http://localhost:8080/inventory')
-            .then(res => {
-                this.setState({
-                    inventoryList: [this.state.inventoryList, newProduct]
-                    // displayForm: false,
-                    // inventoryList: res.data
-                })
-            })
+           this.props.addHandler();
+           this.toggleForm();
         })
-    };
+    }; 
 
     statusUpdate = checked => {
-        console.log(checked)
         this.setState({
             inStock: checked
         });
@@ -135,7 +129,7 @@ export default class CreateProduct extends Component {
                 <label>Item Description</label>
                 <textarea id='description' placeholder='(Optional)' />
                 <div className='form__buttons'>
-                    <button id='Save'>Save</button>
+                    <button id='Save' type='submit'>Save</button>
                     <button id='Cancel' onClick={this.toggleForm}>Cancel</button>
                 </div>
                 </form>
