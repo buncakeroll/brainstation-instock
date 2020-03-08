@@ -31,12 +31,14 @@ class WarehouseDetails extends Component {
     render() {
         return (
             <div className="details">
+            <div className="details__namearrow">
                 <Link className="details__link" to={'/warehouses'}>
-                    <div className="details__namearrow">
-                        <img className="details__arrow" alt="back arrow" src={backArrow} />
-                        <p className="details__name">{this.state.warehouseData.name}</p>
-                    </div>
+                        <div className='details__box'>
+                            <img className="details__arrow" alt="back arrow" src={backArrow} />
+                            <p className="details__name">{this.state.warehouseData.name}</p>
+                        </div>
                 </Link>
+            </div>
                 <div className="details__namearrow">
                     <AddressCard warehouseData={this.state.warehouseData}/>
                 </div>
