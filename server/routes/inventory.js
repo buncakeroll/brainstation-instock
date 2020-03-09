@@ -15,8 +15,7 @@ router.post('/', (req, res) => {
 })
 
 router.get("/", (_, res) => {
-  res.json(inventoryList);
-  res.status(200).send();
+  res.status(200).send(inventoryList);
 });
 
 router.get("/:id", (req, res) => {
@@ -26,7 +25,7 @@ router.get("/:id", (req, res) => {
   if (data == undefined) {
     res.status(404).send("Item not found");
   } else {
-    res.json(data);
+    res.send(data);
   }
 });
 

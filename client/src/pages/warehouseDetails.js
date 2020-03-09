@@ -8,8 +8,7 @@ import InventoryTable from '../components/InventoryTable/InventoryTable';
 
 class WarehouseDetails extends Component {
     state = {
-        warehouseData: [],
-        warehouseInv: []
+        warehouseData: []
     }
 
     getWareHouseData = id => {
@@ -28,6 +27,17 @@ class WarehouseDetails extends Component {
         this.getWareHouseData(this.props.match.params.id);
     }
 
+    deleteHandler(itemId) {
+        axios.delete('http://localhost:8080/inventory/'+itemId).then( res => {
+            axios.get(`http://localhost:8080/warehouse/${this.state.warehouseData.id}`).then(data => {
+                console.log(data.data)
+                this.setState({
+                    warehouseData: data.data
+                })
+            })
+        })
+    }
+
     render() {
         return (
             <div className="details">
@@ -43,7 +53,7 @@ class WarehouseDetails extends Component {
                     <AddressCard warehouseData={this.state.warehouseData}/>
                 </div>
                 <div className='details__inv'>
-                    <InventoryTable list={this.state.warehouseData.inventory} />
+                    <InventoryTable list={this.state.warehouseData.inventory} deleteHandler={this.deleteHandler.bind(this)}/>
                 </div>
             </div >
         )
