@@ -1,0 +1,146 @@
+@import "../../styles/fonts";
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/reset";
+
+.product {
+  margin: 0 1rem 1rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-top: 2rem;
+  @include tablet {
+    flex-direction: row;
+    border-top: 1.5px solid $inputBorder;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+  }
+  &__instock {
+    margin-top: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    @include tablet {
+      margin-top: 0px;
+      margin-left: 24px;
+      margin-bottom: 0px;
+    }
+  }
+  &__in {
+    background-color: $green;
+    color: white;
+    width: 120px;
+    height: 34px;
+    border-radius: 6px;
+    font-family: "Avenir-Demi";
+    font-size: 1rem;
+    padding-top: 6px;
+  }
+  &__out {
+    background-color: $inputBorder;
+    color: $primary;
+    width: 120px;
+    height: 34px;
+    border-radius: 6px;
+    font-family: "Avenir-Demi";
+    font-size: 1rem;
+    padding-top: 6px;
+  }
+  &__name {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+  }
+  &__title {
+    font-family: "Avenir-Bold";
+    font-size: 1.5rem;
+    color: $primary;
+    margin-left: 15px;
+    margin-top: 2px;
+    @include tablet {
+      font-size: 2.25rem;
+    }
+  }
+  &__subtitle {
+    font-family: "Avenir-Demi";
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: $accent;
+  }
+  &__info {
+    font-size: 1rem;
+  }
+  &__description {
+    margin: 1.5rem 0rem 1.5rem 0;
+    @include tablet {
+      margin: 0;
+      padding-bottom: 48px;
+    }
+  }
+  &__btn {
+    &--edit {
+      margin-top: 2rem;
+      background-color: $button2;
+      color: white;
+      width: 100%;
+      height: 3rem;
+      font-family: "Avenir-Demi";
+      font-size: 1rem;
+      border-radius: 6px;
+      @include tablet {
+        width: 160px;
+        height: 48px;
+        align-self: flex-end;
+        margin-top: 48px;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .product {
+    display: flex;
+    flex-direction: column;
+    &__headline {
+      padding-bottom: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    &__boddy {
+      border-top: 1.5px solid $inputBorder;
+      border-bottom: 1.5px solid $inputBorder;
+      padding-top: 2rem;
+      padding-bottom: 0.5rem;
+      width: 100%;
+    }
+    &__container1,
+    &__container2 {
+      display: flex;
+      flex-direction: row;
+    }
+    &__col {
+      display: flex;
+      flex-direction: column;
+      margin-right: 15vw;
+      padding-bottom: 48px;
+    }
+  }
+}
+@include desktop {
+  .product {
+    padding-right: 90px;
+    padding-left: 90px;
+    &__boddy {
+      display: flex;
+      flex-direction: row;
+    }
+    &__description {
+      padding-right: 5vw;
+    }
+    &__contain {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
