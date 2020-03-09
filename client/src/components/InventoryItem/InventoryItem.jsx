@@ -29,10 +29,11 @@ class InventoryItem extends React.Component {
     });
   };
 
-  deleteItem() {
+  deleteItem(id) {
     //call delete to server based on this.props.item.id
     //then =>
-    this.props.deleteHandler();
+    console.log('Im enter');
+    this.props.deleteHandler(id);
   }
 
   render() {
@@ -101,7 +102,7 @@ class InventoryItem extends React.Component {
             alt=""
           />
           {this.state.clicked && (
-            <div id={id} className="item__drop" onClick={this.deleteItem}>
+            <div id={id} className="item__drop" onClick={() => this.deleteItem(id)}>
               Remove
             </div>
           )}
