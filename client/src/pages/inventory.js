@@ -50,7 +50,6 @@ export default class Inventory extends Component {
   }
 
   deleteHandler(id) {
-    console.log('Im deleting');
     axios.delete('http://localhost:8080/inventory/'+id).then(newList => {
       this.setState({
         list: newList.data
