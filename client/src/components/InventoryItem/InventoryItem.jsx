@@ -32,7 +32,6 @@ class InventoryItem extends React.Component {
   deleteItem(id) {
     //call delete to server based on this.props.item.id
     //then =>
-    console.log('Im enter');
     this.props.deleteHandler(id);
   }
 

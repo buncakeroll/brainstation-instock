@@ -28,8 +28,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.get("/", (_, res) => {
-  res.json(warehouseList);
-  res.status(200).send();
+  res.status(200).send(warehouseList);
 });
 
 router.post("/", (req, res) => {

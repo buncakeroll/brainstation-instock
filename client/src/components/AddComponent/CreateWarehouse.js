@@ -103,37 +103,37 @@ export default class CreateWarehouse extends Component {
                                 <div className='row'>
                                     <div className='column'>
                                         <label>Address</label>
-                                        <input type='text' id='warehouseAddress' placeholder='Address' />
+                                        <input type='text' id='warehouseAddress' placeholder='Enter Address' />
                                     </div>
                                     <div className='column' id='warehouselocation'>
                                         <label>Location</label>
                                         <select name='location' id='location'>
-                                            <option value='Toronto'>Toronto, ON</option>
+                                            <option value='Toronto'>Toronto, CAN</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div className='row'>
                                     <div className='column'>
                                         <label>Contact Name</label>
-                                        <input type='text' id='contactName' placeholder='Warehouse Name' />
+                                        <input type='text' id='contactName' placeholder='Enter Name' />
                                     </div>
                                     <div className='column'>
                                         <label>Contact Position</label>
-                                        <input type='text' id='contactPosition' placeholder='Warehouse ID' />
+                                        <input type='text' id='contactPosition' placeholder='Enter Position' />
                                     </div>
                                 </div>
                                 <div className='row'>
                                     <div className='column'>
                                         <label>Contact Telephone</label>
-                                        <input type='text' id='contactTelephone' placeholder='Warehouse Name' />
+                                        <input type='text' id='contactTelephone' placeholder='(000) - 000 - 0000' />
                                     </div>
                                     <div className='column'>
                                         <label>Contact Email</label>
-                                        <input type='email' id='contactEmail' placeholder='Warehouse ID' />
+                                        <input type='email' id='contactEmail' placeholder='email@instock.com' />
                                     </div>
                                 </div>
                                 <label>Categories</label>
-                                <textarea id='description' placeholder='(Optional)' />
+                                <textarea id='description' placeholder='Use commas to seperate each category' />
                                 <div className='form__buttons'>
                                     <button id='Save'>Save</button>
                                     <button id='Cancel' onClick={this.toggleForm}>Cancel</button>
