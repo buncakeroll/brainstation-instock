@@ -2,7 +2,6 @@ import React from 'react';
 import './AddressCard.scss';
 
 const AddressCard = (props) => {
-    console.log(props.warehouseData);
     if (props.warehouseData.address) {
         return (
             <div className='address'>
