@@ -35,6 +35,12 @@ class WarehouseDetails extends Component {
                     warehouseData: data.data
                 })
             })
+            .catch(error => {
+                console.log('Error retrieving warehouse information:', error)
+            })
+        })
+        .catch(err => {
+            console.log('Error deleting item:', err)
         })
     }
 
@@ -53,7 +59,7 @@ class WarehouseDetails extends Component {
                     <AddressCard warehouseData={this.state.warehouseData}/>
                 </div>
                 <div className='details__inv'>
-                    <InventoryTable list={this.state.warehouseData.inventory} deleteHandler={this.deleteHandler.bind(this)}/>
+                    <InventoryTable list={this.state.warehouseData.inventory} deleteHandler={(itemId) => this.deleteHandler(itemId)}/>
                 </div>
             </div >
         )

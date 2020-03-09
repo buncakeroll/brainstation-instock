@@ -47,6 +47,9 @@ export default class Inventory extends Component {
         list: filtered
       })
     })
+    .catch(err => {
+      console.log('Error recieving inventory:', err);
+    })
   }
 
   deleteHandler(id) {
@@ -54,6 +57,9 @@ export default class Inventory extends Component {
       this.setState({
         list: newList.data
       })
+    })
+    .catch(err => {
+      console.log('Error deleting item:', err)
     })
   }
 
@@ -64,9 +70,9 @@ export default class Inventory extends Component {
     render() {
       return (
         <div>
-          <DisplayPage heading='Inventory' searchHandler={this.searchHandler.bind(this)}/>
-          <CreateProduct addHandler={this.updateList.bind(this)}/>
-          <InventoryTable list={this.state.list} deleteHandler={this.deleteHandler.bind(this)}/>
+          <DisplayPage heading='Inventory' searchHandler={(search) => this.searchHandler(search)}/>
+          <CreateProduct addHandler={() => this.updateList()}/>
+          <InventoryTable list={this.state.list} deleteHandler={(itemId) => this.deleteHandler(itemId)}/>
         </div>
       )
     }
