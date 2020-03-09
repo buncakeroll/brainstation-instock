@@ -3,96 +3,21 @@ import axios from 'axios';
 import AddButton from './AddButton';
 
 export default class CreateWarehouse extends Component {
-    state = {
-        warehouseList: {},
-        displayForm: false
-    };
-
-    toggleForm = () => {
-        if (!this.state.displayForm) {
-            this.setState({
-                displayForm: true
-            });
-        } else {
-            this.setState({
-                displayForm: false
-            });
-        }
-    };
 
     stopPropagation = event => {
         event.stopPropagation();
     };
 
-    submitHandler = event => {
-        event.preventDefault();
-        let warehouseNameInput = event.target.warehouseName.value;
-        let warehouseIdInput = event.target.warehouseId.value;
-        let warehouseAddressInput = event.target.warehouseAddress.value;
-        let locationInput = event.target.location.value;
-        let contactNameInput = event.target.contactName.value;
-        let contactPositionInput = event.target.contactPosition.value;
-        let contactTelephoneInput = event.target.contactTelephone.value;
-        let contactEmailInput = event.target.contactEmail.value;
-        let descriptionInput = event.target.description.value;
-
-        if (warehouseNameInput === '') {
-            return alert('Please enter a warehouse name');
-        }
-        if (warehouseIdInput === '') {
-            return alert('Please enter a warehouse id');
-        }
-        if (warehouseAddressInput === '') {
-            return alert('Please enter an address');
-        }
-        if (locationInput === '') {
-            return alert('Please enter a location');
-        }
-        if (contactNameInput === '') {
-            return alert('Please enter a name');
-        }
-        if (contactPositionInput === '') {
-            return alert('Please enter a position');
-        }
-        if (contactTelephoneInput === '') {
-            return alert('Please enter a phone number');
-        }
-        if (contactEmailInput === '') {
-            return alert('Please enter an email address');
-        }
-        if (descriptionInput === '') {
-            return alert('Please enter a category')
-        }
-
-        axios.post('http://localhost:8080/warehouse', {
-            id: warehouseIdInput,
-            name: warehouseNameInput,
-            address: {
-                street: warehouseAddressInput,
-                location: locationInput
-            },
-            contact: {
-                name: contactNameInput,
-                position: contactPositionInput,
-                phone: contactTelephoneInput,
-                email: contactEmailInput
-            },
-            inventoryCategories: descriptionInput
-        }).then(res => {
-            this.props.reload();
-            this.toggleForm();
-        })
-    };
-
     render() {
+        console.log(this.props)
         let form;
-        if (this.state.displayForm) {
-            form = (
-                <div className='form--container' onClick={this.toggleForm}>
+        if (this.props.displayForm) {
+            return (
+                <div className='form--container' onClick={this.props.toggleForm}>
                     <div className='form--new-form' onClick={this.stopPropagation}>
                         <h1 className='form--new-form__title'>Create New</h1>
                         <div className='form--new-form__form'>
-                            <form onSubmit={this.submitHandler}>
+                            <form onSubmit={this.props.submitHandler}>
                                 <div className='row'>
                                     <div className='column'>
                                         <label>Warehouse Name</label>
@@ -139,7 +64,7 @@ export default class CreateWarehouse extends Component {
                                 <textarea id='description' placeholder='Use commas to seperate each category' />
                                 <div className='form__buttons'>
                                     <button id='Save'>Save</button>
-                                    <button id='Cancel' onClick={this.toggleForm}>Cancel</button>
+                                    <button id='Cancel' onClick={this.props.toggleForm}>Cancel</button>
                                 </div>
                             </form>
                         </div>
@@ -150,7 +75,7 @@ export default class CreateWarehouse extends Component {
         return (
             <div>
                 {form}
-                <AddButton Popup={this.toggleForm} />
+                <AddButton toggleForm={this.props.toggleForm} />
             </div>
         );
     };

@@ -5,7 +5,7 @@ class AddButton extends React.Component {
   render() {
     return (
       <>
-        <button className="AddButton" onClick={this.props.Popup}>
+        <button className="AddButton" onClick={this.props.toggleForm}>
           <img src={Add} alt="Add New" />
         </button>
       </>

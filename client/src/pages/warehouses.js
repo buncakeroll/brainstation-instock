@@ -8,7 +8,9 @@ import axios from "axios";
 class Warehouses extends Component {
   state = {
     reload: false,
-    list: []
+    list: [],
+    warehouseList: {},
+    displayForm: false
   };
 
   reloader = () => {
@@ -24,6 +26,85 @@ class Warehouses extends Component {
       });
     });
   }
+
+
+  toggleForm = () => {
+    console.log("toggle")
+    if (!this.state.displayForm) {
+      this.setState({
+        displayForm: true
+      });
+    } else {
+      this.setState({
+        displayForm: false
+      });
+    }
+  };
+
+  submitHandler = event => {
+    event.preventDefault();
+    let warehouseNameInput = event.target.warehouseName.value;
+    let warehouseIdInput = event.target.warehouseId.value;
+    let warehouseAddressInput = event.target.warehouseAddress.value;
+    let locationInput = event.target.location.value;
+    let contactNameInput = event.target.contactName.value;
+    let contactPositionInput = event.target.contactPosition.value;
+    let contactTelephoneInput = event.target.contactTelephone.value;
+    let contactEmailInput = event.target.contactEmail.value;
+    let descriptionInput = event.target.description.value;
+
+    if (warehouseNameInput === '') {
+      return alert('Please enter a warehouse name');
+    }
+    if (warehouseIdInput === '') {
+      return alert('Please enter a warehouse id');
+    }
+    if (warehouseAddressInput === '') {
+      return alert('Please enter an address');
+    }
+    if (locationInput === '') {
+      return alert('Please enter a location');
+    }
+    if (contactNameInput === '') {
+      return alert('Please enter a name');
+    }
+    if (contactPositionInput === '') {
+      return alert('Please enter a position');
+    }
+    if (contactTelephoneInput === '') {
+      return alert('Please enter a phone number');
+    }
+    if (contactEmailInput === '') {
+      return alert('Please enter an email address');
+    }
+    if (descriptionInput === '') {
+      return alert('Please enter a category')
+    }
+
+    axios.post('http://localhost:8080/warehouse', {
+      id: warehouseIdInput,
+      name: warehouseNameInput,
+      address: {
+        street: warehouseAddressInput,
+        location: locationInput
+      },
+      contact: {
+        name: contactNameInput,
+        position: contactPositionInput,
+        phone: contactTelephoneInput,
+        email: contactEmailInput
+      },
+      inventoryCategories: descriptionInput
+    }).then(() => {
+      this.toggleForm();
+      axios.get("http://localhost:8080/warehouse").then(data => {
+        this.setState({
+          list: data.data
+        });
+      });
+    })
+  };
+
 
   searchHandler(userRequest) {
     console.log(userRequest);
@@ -80,7 +161,7 @@ class Warehouses extends Component {
           warehouseList={this.state.list}
           reload={this.state.reload}
         />
-        <CreateWarehouse reload={this.reloader} />
+        <CreateWarehouse displayForm={this.state.displayForm} submitHandler={this.submitHandler} toggleForm={this.toggleForm} reload={this.reloader} />
       </div>
     );
   }
