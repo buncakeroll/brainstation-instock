@@ -60,6 +60,9 @@ export default class CreateWarehouse extends Component {
         if (contactEmailInput === '') {
             return alert('Please enter an email address');
         }
+        if (descriptionInput === '') {
+            return alert('Please enter a category')
+        }
 
         axios.post('http://localhost:8080/warehouse', {
             id: warehouseIdInput,
