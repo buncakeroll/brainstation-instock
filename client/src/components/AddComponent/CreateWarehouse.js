@@ -93,11 +93,11 @@ export default class CreateWarehouse extends Component {
                                 <div className='row'>
                                     <div className='column'>
                                         <label>Warehouse Name</label>
-                                        <input type='text' id='warehouseName' placeholder='Warhouse Name' />
+                                        <input type='text' id='warehouseName' placeholder='Warehouse Name' />
                                     </div>
                                     <div className='column'>
                                         <label>Warehouse ID</label>
-                                        <input type='text' id='warehouseId' placeholder='Warhouse ID' />
+                                        <input type='text' id='warehouseId' placeholder='Warehouse ID' />
                                     </div>
                                 </div>
                                 <div className='row'>
@@ -115,21 +115,21 @@ export default class CreateWarehouse extends Component {
                                 <div className='row'>
                                     <div className='column'>
                                         <label>Contact Name</label>
-                                        <input type='text' id='contactName' placeholder='Warhouse Name' />
+                                        <input type='text' id='contactName' placeholder='Warehouse Name' />
                                     </div>
                                     <div className='column'>
                                         <label>Contact Position</label>
-                                        <input type='text' id='contactPosition' placeholder='Warhouse ID' />
+                                        <input type='text' id='contactPosition' placeholder='Warehouse ID' />
                                     </div>
                                 </div>
                                 <div className='row'>
                                     <div className='column'>
                                         <label>Contact Telephone</label>
-                                        <input type='text' id='contactTelephone' placeholder='Warhouse Name' />
+                                        <input type='text' id='contactTelephone' placeholder='Warehouse Name' />
                                     </div>
                                     <div className='column'>
                                         <label>Contact Email</label>
-                                        <input type='email' id='contactEmail' placeholder='Warhouse ID' />
+                                        <input type='email' id='contactEmail' placeholder='Warehouse ID' />
                                     </div>
                                 </div>
                                 <label>Categories</label>
