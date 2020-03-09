@@ -82,7 +82,7 @@ export default class CreateProduct extends Component {
     if (this.state.displayForm) {
         form = (
         <div className='form--container' onClick={this.toggleForm}>
-            <div className='form--new-form' onclick={this.stopPropagation}>
+            <div className='form--new-form' onClick={this.stopPropagation}>
             <h1 className='form--new-form__title'>Create New</h1>
             <div className='form--new-form__form'>
                 <form onSubmit={this.submitHandler}>
