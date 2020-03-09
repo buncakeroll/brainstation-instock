@@ -30,10 +30,10 @@ class InventoryItem extends React.Component{
         })
     }
 
-    deleteItem() {
+    deleteItem(id) {
         //call delete to server based on this.props.item.id
         //then =>
-            this.props.deleteHandler();
+            this.props.deleteHandler(id);
     }
 
     render() {
@@ -69,7 +69,7 @@ class InventoryItem extends React.Component{
                     <img src={dots} className='item__kebab' onClick={this.toggle}/>
                     {
                         this.state.clicked && (
-                            <div id={id} className='item__drop' onClick={this.deleteItem}>Remove</div>
+                            <div id={id} className='item__drop' onClick={() => this.deleteItem(id)}>Remove</div>
                         )
                     }
                 </div>
