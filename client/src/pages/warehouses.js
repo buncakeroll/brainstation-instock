@@ -3,8 +3,19 @@ import DisplayThing from './../components/DisplayPage/DisplayPage';
 import WarehouseCard from './../components/WarehouseCard/WarehouseCard';
 import CreateWarehouse from './../components/AddComponent/CreateWarehouse';
 import './warehouses.scss';
+import axios from 'axios';
 
 class Warehouses extends Component {
+
+  state = {
+    reload: false
+  }
+
+  reloader = () => {
+    this.setState({
+      reload: true
+    })
+  }
 
   render() {
     return (<div>
@@ -19,8 +30,8 @@ class Warehouses extends Component {
           <p className='locations__label locations__label4'>CATEGORIES</p>
         </div>
       </div>
-      <WarehouseCard />
-      <CreateWarehouse />
+      <WarehouseCard areload={this.state.reload} />
+      <CreateWarehouse reload={this.reloader} />
     </div >
     )
   }
