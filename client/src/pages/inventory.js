@@ -7,8 +7,7 @@ import axios from 'axios';
 export default class Inventory extends Component {
 
   state = {
-    list: [],
-    deleted: false
+    list: []
   }
 
   updateList() {
@@ -50,17 +49,13 @@ export default class Inventory extends Component {
     })
   }
 
-  deleteHandler() {
-    this.setState({
-      deleted: true
+  deleteHandler(id) {
+    console.log('Im deleting');
+    axios.delete('http://localhost:8080/inventory/'+id).then(newList => {
+      this.setState({
+        list: newList.data
+      })
     })
-  }
-
-  componentDidUpdate() {
-    if (this.state.deleted) {
-      //axios.get
-      //then set state list to axios get result and changed deleted to false!
-    }
   }
 
   componentDidMount() {
@@ -72,7 +67,7 @@ export default class Inventory extends Component {
         <div>
           <DisplayPage heading='Inventory' searchHandler={this.searchHandler.bind(this)}/>
           <CreateProduct addHandler={this.updateList.bind(this)}/>
-          <InventoryTable list={this.state.list} deleteHandler={this.deleteHandler}/>
+          <InventoryTable list={this.state.list} deleteHandler={this.deleteHandler.bind(this)}/>
         </div>
       )
     }
