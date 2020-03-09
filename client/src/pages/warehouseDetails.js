@@ -30,7 +30,6 @@ class WarehouseDetails extends Component {
     deleteHandler(itemId) {
         axios.delete('http://localhost:8080/inventory/'+itemId).then( res => {
             axios.get(`http://localhost:8080/warehouse/${this.state.warehouseData.id}`).then(data => {
-                console.log(data.data)
                 this.setState({
                     warehouseData: data.data
                 })
