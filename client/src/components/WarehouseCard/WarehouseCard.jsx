@@ -28,6 +28,12 @@ class WarehouseCard extends Component {
         this.getWarehouses();
     }
 
+    componentDidUpdate() {
+        if (this.props.areload == true) {
+            this.getWarehouses();
+        }
+    }
+
     render() {
         return (
             <>

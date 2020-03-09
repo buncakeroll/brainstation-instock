@@ -37,4 +37,15 @@ router.get("/:id", (req, res) => {
   }
 });
 
+router.delete("/:id", (req, res) => {
+  let itemInQuestion = inventoryList.find(item => item.id === req.params.id);
+  let index = inventoryList.indexOf(itemInQuestion);
+  if (index >= 0) {
+    inventoryList.splice(index, 1);
+    res.status(201).send(inventoryList);
+  } else {
+    res.status(400).send("Item deleted!");
+  }
+})
+
 module.exports = router;
