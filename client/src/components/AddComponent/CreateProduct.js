@@ -93,7 +93,7 @@ export default class CreateProduct extends Component {
                                     </div>
                                     <div className='column'>
                                         <label>Last Ordered</label>
-                                        <input type='text' id='ordered' placeholder='mm/dd/yyyy' />
+                                        <input type='text' id='ordered' placeholder='MM/DD/YYYY' />
                                     </div>
                                 </div>
                                 <div className='row'>
@@ -105,14 +105,13 @@ export default class CreateProduct extends Component {
                                         <label>Country</label>
                                         <select name='country' id='country'>
                                             <option value='Canada'>Canada</option>
-                                            <option value='USA'>USA</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div className='row'>
                                     <div className='column'>
                                         <label>Quantity</label>
-                                        <input type='text' id='quantity' placeholder='0' />
+                                        <input type='number' id='quantity' placeholder='0' />
                                     </div>
                                     <div className='column'>
                                         <label>Status</label>
