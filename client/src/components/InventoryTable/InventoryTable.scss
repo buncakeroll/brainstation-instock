@@ -1,0 +1,64 @@
+@import '../../styles/mixins';
+@import '../../styles/colors';
+@import '../../styles/fonts';
+
+.table {
+    padding: 0 1rem;
+    padding-top: 1.5rem;
+
+    @include tablet {
+        padding: 0 1.5rem;
+        padding-top: 1.5rem;
+    }
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        padding: 0 6rem;
+        padding-top: 1.5rem;
+        margin-top: .5rem;
+    }
+
+    &__heading-bar {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            padding-right: 4.5px;
+        }
+        @include desktop {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__wrap {
+        width: 100%;
+    }
+
+    &__box-start {
+        width: 190px;
+        color: $accent;
+        font-family: 'Avenir-Demi';
+        font-size: 0.75rem;
+        @include desktop {
+            width: 250px;
+            font-size: 0.85rem;
+        }
+    }
+
+    &__box-reg {
+        width: 95px;
+        color: $accent;
+        font-family: 'Avenir-Demi';
+        font-size: 0.75rem;
+        @include desktop {
+            font-size: 0.85rem;
+            width: 110px;
+        }
+
+        &--marg {
+            @extend .table__box-reg;
+            margin-right: 3rem;
+        }
+    }
+}

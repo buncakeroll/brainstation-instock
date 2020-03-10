@@ -1,0 +1,70 @@
+@import '../../styles/fonts';
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+
+.display {
+    padding: 2rem 1rem 0 1rem;
+
+    @include tablet {
+        padding: 2rem 1.5rem 0 1.5rem;
+    }
+
+    @include desktop {
+        padding: 2.5rem 6rem 0 6rem;
+    }
+
+    &__title {
+        font-family: 'Avenir-Bold';
+        color: $primary;
+        font-size: 1.7rem;
+        margin: 0;
+        display: inline-block;
+        @include large-mobile {
+            font-size: 2.25rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include large-mobile {
+            flex-direction: row;
+            width: 100%;;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @include tablet{
+            margin-bottom: 16px;
+        }
+    }
+}
+
+input[type=text][name='search'] {
+    height: 3rem;
+    width: 256px !important;
+    border-radius: 5px;
+    border: 1px solid $inputBorder;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    background: url(../../assets/icons/svg/Icon-search.svg) no-repeat 9px 9px;
+    background-color: $inputBg;
+    text-indent: 15%;
+    background-position: 7% center;
+    font-size: 1rem;
+    display: inline-block;
+    @include large-mobile {
+        margin:0;
+        text-indent: 18%;
+        padding-top: 2px;
+    }
+
+    @include desktop {
+        width: 252px !important;
+    }
+
+    &::placeholder {
+        color: black;
+    }
+}

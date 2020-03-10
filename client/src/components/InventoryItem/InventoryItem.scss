@@ -1,0 +1,148 @@
+@import '../../styles/colors';
+@import '../../styles/fonts';
+@import '../../styles/reset';
+@import '../../styles/mixins';
+
+* {
+    margin: 0;
+}
+
+.item {
+    display: flex;
+    border-bottom: 1.5px solid $inputBorder;
+    color: $primary;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+        height: 100px;
+        margin: 0;
+        align-items: center;
+    }
+
+    @include desktop {
+        height: 80px;
+    }
+
+    &:first-of-type {
+        padding-top: 0;
+    }
+
+    &__invisible {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__box {
+        width: 100%;
+
+        @include tablet {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        color: $accent;
+        font-family: 'Avenir-Demi';
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__name {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        font-family: 'Avenir-Demi';
+
+        @include tablet {
+            margin: 0;
+        }
+
+        @include desktop{
+            margin-bottom: .5rem;
+            font-size: 1.1rem;
+        }
+    }
+
+    &__info {
+        font-size: 0.9rem;
+
+        &--space {
+            @extend .item__info;
+            margin-bottom: 1.5rem;
+        }
+
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &__kebab {
+        align-self: flex-start;
+        min-width: 4.5px;
+        @include tablet {
+            align-self: center;
+        }
+
+        &-box {
+            position: relative;
+            &:hover {
+                cursor: pointer;
+            }
+            &:focus .item__kebab{
+                filter: invert(1);
+            }
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+
+    &__drop {
+        display: flex;
+        position: absolute;
+        width: 160px;
+        padding: 0 1rem;
+        height: 2.5rem;
+        background-color: white;
+        border-radius: 4px;
+        right: 0;
+        border: 1px solid $inputBorder;
+        align-items: center;
+        box-shadow: 0 20px 10px -6px rgba(0, 0, 0, 0.05);  
+    }
+
+    &__box-start {
+        display: inline-block;
+        width: 190px;
+        height: fit-content;
+        @include desktop {
+            width: 250px;
+        }
+    }
+
+    &__box-reg {
+        display: inline-block;
+        height: fit-content;
+        width: 95px;
+        @include desktop {
+            width: 110px;
+        }
+
+        &--marg {
+            @extend .item__box-reg;
+            margin-right: 3rem;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        width: 100%;
+        color: $primary;
+    }
+}

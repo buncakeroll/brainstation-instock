@@ -1,0 +1,64 @@
+@import '../../styles/fonts';
+@import '../../styles/colors';
+@import '../../styles/mixins';
+@import '../../styles/reset';
+
+.address {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+        border-top: 1.5px solid $inputBorder;
+        padding-top: 2rem;
+        padding-bottom: 0.5rem;
+    }
+
+    &__box {
+        width: 200px;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+
+        &--indent {
+            @extend .address__box;
+            @include tablet {
+                margin-right: 190px;
+            }
+            @include desktop {
+                margin-right: 300px;
+            }
+        }
+    }
+
+    &__title {
+        color: $accent;
+        font-family: 'Avenir-Demi';
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    &__info {
+        font-size: 0.85rem;
+        color: $primary;
+
+        &--spaced {
+            @extend .address__info;
+            margin-top: 1.5rem;
+        }
+
+        @include tablet {
+            font-size: 0.9rem;
+        }
+
+        @include desktop {
+            font-size: 1rem;
+        }
+
+        &--slant {
+            font-family: 'Avenir-Side';
+        }
+    }
+}

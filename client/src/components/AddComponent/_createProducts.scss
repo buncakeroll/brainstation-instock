@@ -1,0 +1,229 @@
+button {
+    border: none;
+}
+
+input {
+    padding-left: 1.25rem;
+    width: 100% !important;
+}
+
+
+textarea {
+    padding: 0.8rem 0 0 1.25rem;
+    height: 5rem !important;
+}
+
+#country,
+#location {
+    width: 100% !important;
+}
+.form--container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    transition: ease all .5s;
+
+    @include large-mobile {
+        justify-content: center;
+        padding: 5vw;
+    }
+
+    @include desktop {
+        align-items: center;
+        padding: 0;
+    }
+}
+
+.form--new-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    width: 100%;
+    background: $white;
+    overflow-y: scroll;
+    overflow: scroll;
+
+    @include large-mobile {
+        display: flex;
+        flex-direction: column;
+        min-width: 36rem;
+        max-width: 36rem;
+        min-height: 15vh;
+        border-radius: 5px;
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+        font-family: 'Avenir-bold';
+
+        @include desktop {
+            margin-top: 0.5rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        form {
+            .row {
+                @include large-mobile {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .column {
+                    @include large-mobile {
+                        display: flex;
+                        flex-direction: column;
+                        width: 50vw;
+                    }
+                }
+
+                input,
+                #country,
+                #location {
+                    
+                    @include large-mobile {
+                        margin: 0 0 1.5rem;
+                        width: 30vw;
+                        height: 3rem;
+                        background: $inputBg;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .column {
+                @include large-mobile {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 0.75rem;
+                }
+            }
+
+            label {
+                margin-bottom: 0.5rem;
+                font-size: 0.90rem;
+                color: $accent;
+                text-transform: uppercase;
+            }
+
+            #product,
+            #city,
+            #quantity {
+                @include large-mobile {
+                    margin-right: 1.5rem;
+                }
+            }
+
+            .form__buttons {
+                @include large-mobile {
+                    display: flex;
+                    flex-direction: row-reverse;
+                }
+            }
+
+            input,
+            textarea,
+            #country,
+            #location {
+                margin: 0.5rem 0 1.5rem;
+                height: 3rem;
+                background: $inputBg;
+                border-radius: 5px;
+                border: 1px solid $inputBorder;
+                width: 100%;
+
+                &::placeholder {
+                    font-size: 0.75rem;
+                }
+
+                #description {
+                    height: 5rem;
+
+                    @include large-mobile {
+                        height: 5rem;
+                        width: 62.5vw;
+                        padding: 1vw;
+                    }
+                }
+            }
+
+            #status {
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+                align-items: center;
+                height: 4rem;
+
+                @include large-mobile {
+                    text-align: left;
+                    width: 100%;
+                    height: 44px;
+                }
+
+                p {
+                    margin-right: 1rem;
+                    width: 100%;
+                }
+            }
+
+            button {
+                width: 100%;
+                border-radius: 5px;
+                height: 3rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                cursor: pointer;
+
+                @include large-mobile {
+                    width: 10rem;
+                    border-radius: 5px;
+                    height: 3rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
+
+            #Save,
+            #Cancel {
+                font-size: 0.75rem;
+            }
+
+            #Save {
+                background: $button2;
+                color: $white;
+            }
+
+            #Cancel {
+                background: $white;
+                color: $button2;
+            }
+        }
+    }
+}
+
+.AddButton {
+    position: fixed;
+    z-index: 1;
+    right: 7vw;
+    bottom: 7vw;
+    background: $button2;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @include large-mobile {
+        width: 5rem;
+        height: 5rem;
+    }
+}

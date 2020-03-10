@@ -1,0 +1,12 @@
+// from styles folder
+
+@import './styles/colors';
+@import './styles/fonts';
+@import './styles/mixins';
+@import './styles/reset';
+
+// from component folders
+
+@import './components/Header/Header.scss';
+@import './components/NavBar/NavBar.scss';
+@import './components/AddComponent/createProducts'
