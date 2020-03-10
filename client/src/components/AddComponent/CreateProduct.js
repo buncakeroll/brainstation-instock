@@ -62,6 +62,8 @@ export default class CreateProduct extends Component {
         }).then(res => {
             this.props.addHandler();
             this.toggleForm();
+        }).catch((err) => {
+            console.log(err);
         })
     };
 
@@ -142,7 +144,7 @@ export default class CreateProduct extends Component {
         return (
             <div>
                 {form}
-                <AddButton Popup={this.toggleForm} />
+                <AddButton toggleForm={this.toggleForm} />
             </div>
         );
     };

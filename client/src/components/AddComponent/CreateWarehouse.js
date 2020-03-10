@@ -9,7 +9,6 @@ export default class CreateWarehouse extends Component {
     };
 
     render() {
-        console.log(this.props)
         let form;
         if (this.props.displayForm) {
             return (

@@ -102,6 +102,8 @@ class Warehouses extends Component {
           list: data.data
         });
       });
+    }).catch((err) => {
+      console.log(err);
     })
   };
 
